@@ -1,14 +1,18 @@
 pipeline {
     agent any
     stages {
-        stage('build') {
+        stage('version check') {
             steps {
-                echo "Welcome to jenkins Environment"
-                sh 'echo using shell within jenkinsfile'
-                echo 'not using shell in jenkinsfile'
+                echo 'Welcome to Jenkins World'
+                sh 'python --version'
             }
-
         }
-       
+        stage('run') {
+            steps {
+                echo 'Welcome to Jenkins World'
+                sh 'python pipeline.py'
+            }
+        }
+
     }
 }
